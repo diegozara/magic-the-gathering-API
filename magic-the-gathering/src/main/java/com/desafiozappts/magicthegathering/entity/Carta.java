@@ -37,4 +37,8 @@ public class Carta {
     @Column (nullable = false)
     private Integer quantidade;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "jogador_cpf")
+    private Jogador jogador;
+
 }
