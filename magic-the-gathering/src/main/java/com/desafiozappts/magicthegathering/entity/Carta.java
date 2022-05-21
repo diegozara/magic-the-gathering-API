@@ -1,6 +1,7 @@
 package com.desafiozappts.magicthegathering.entity;
 
 import com.desafiozappts.magicthegathering.enums.Idioma;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Carta {
 
     @Id
@@ -26,6 +28,7 @@ public class Carta {
     private String edicao;
 
     @Enumerated (EnumType.STRING)
+    @Column (nullable = false)
     private Idioma idioma;
 
     @Column (nullable = false)
@@ -38,7 +41,7 @@ public class Carta {
     private Integer quantidade;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "jogador_cpf")
+    @JoinColumn(name = "jogador_cpf", nullable = false)
     private Jogador jogador;
 
 }

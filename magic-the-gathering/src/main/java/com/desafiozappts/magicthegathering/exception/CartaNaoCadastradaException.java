@@ -10,4 +10,8 @@ public class CartaNaoCadastradaException extends Throwable {
         super("Carta nao cadastrada com id: "+ id);
     }
 
+    public CartaNaoCadastradaException (){
+        super("Nenhuma Carta cadastrada, por favor cadastre uma carta e tente novamente");
+    }
+
 }

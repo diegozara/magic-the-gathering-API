@@ -2,6 +2,7 @@ package com.desafiozappts.magicthegathering.controller;
 
 
 import com.desafiozappts.magicthegathering.entity.Jogador;
+import com.desafiozappts.magicthegathering.exception.CpfCadastrado;
 import com.desafiozappts.magicthegathering.exception.JogadorNaoCadastradoException;
 import com.desafiozappts.magicthegathering.service.JogadorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class JogadorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Jogador inserirJogador (@RequestBody @Validated Jogador jogador){
+    public Jogador inserirJogador (@RequestBody @Validated Jogador jogador) throws CpfCadastrado {
 
         return jogadorService.inserJogador(jogador);
     }

@@ -1,21 +1,26 @@
 package com.desafiozappts.magicthegathering.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-
-import javax.persistence.*;
-
+import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.validation.annotation.Validated;
 
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.Valid;
 
 @Entity
-@Table(name = "TB_JOGADOR")
+@Table(name = "TB_JOGADORES")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Builder
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Jogador {
 
     @Id
@@ -24,10 +29,10 @@ public class Jogador {
     private String cpf;
 
     @Column(nullable = false)
-    private String Nome;
+    private String jogadorNome;
 
-    @OneToMany (cascade = CascadeType.ALL, mappedBy = "jogador")
-    private List<Carta> carta;
+  /*  @OneToMany (cascade = CascadeType.ALL, mappedBy = "jogador")
+    private List<Carta> carta;*/
 
 }
 
