@@ -1,12 +1,13 @@
 package com.desafiozappts.magicthegathering.repository;
 
 import com.desafiozappts.magicthegathering.entity.Carta;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-
+@ApiOperation(value = "consulta personalizada para não retornar o CPF dos jogadores")
 public interface CartaRepository extends JpaRepository<Carta, Integer> {
 
 

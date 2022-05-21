@@ -8,6 +8,7 @@ import com.desafiozappts.magicthegathering.exception.SolicitacaoNegada;
 import com.desafiozappts.magicthegathering.repository.CartaRepository;
 import com.desafiozappts.magicthegathering.repository.JogadorRepository;
 import com.desafiozappts.magicthegathering.repository.ListaCartas;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -112,7 +113,7 @@ public class CartaService {
             return carta;
             }
     }
-
+    @ApiOperation(value = "Método utilizado para restringir as alterações nas cartas, validação através do CPF do jogador")
     private Carta verficaCPF (Carta carta, String cpf) throws SolicitacaoNegada {
 
 
