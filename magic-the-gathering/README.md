@@ -71,9 +71,20 @@ http://localhost:8080/swagger-ui.html
 ````
 ----
 
+Feito o Deploy da apicação no Heroku conforme o link:
+
+````
+https://venda-cartas-magic-the-gatheri.herokuapp.com/
+````
+
+A API hospedada no Heroku pode ser utilizada também através da interface gráfica do Swagger utilizando o link abaixo no seu navegador:
+
+````
+https://venda-cartas-magic-the-gatheri.herokuapp.com/swagger-ui.html
+````
+---
 
 <h3> ✨ Para Comunidade:</h3> 
-
 
 <p>
 Neste projeto é possível visualizar consultas com query personalizada, tratamento de exceções customizadas, utilização de ENUM e sua anotação para o JPA e também validação específica do CPF com o Vaidation do Spring Boot Starter.
